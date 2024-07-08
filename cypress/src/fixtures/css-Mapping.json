@@ -1,0 +1,13 @@
+{
+    "masterOrganization":":nth-child(2) > .MenuListBox > :nth-child(1) > .captionHead-semibold-12-purple-accent",
+    "organizationCompany":":nth-child(1) > .MenuListBox > :nth-child(1) > .captionHead-semibold-12-purple-accent",
+    "adminMaster":":nth-child(2) > .hover > .captionHead-semibold-12-type-primary",
+    "newCompayAddBtn":".mat-focus-indicator.ng-star-inserted > .mat-button-wrapper > .mat-icon",
+    "firstFilterValue":".ag-row > [aria-colindex='1']",
+    "companyDetailsSavedMessage":"app-my-modal.ng-star-inserted > .form_label",
+    "companyCreatePopupCancelBtn":"app-my-modal.ng-star-inserted > .mat-icon",
+    "companyUpdateBtn":".FormBtns > .mat-focus-indicator.save",
+    "companyDeleteBtn":".delete > .mat-button-wrapper",
+    "infoCompanyDeleteYesBtn":"div.alertbutton",
+    "menuList":".MenuList"
+}
