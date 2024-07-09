@@ -13,14 +13,14 @@ before(() => {
 Then("Click the add company button", () => {
     admin.AddcompanyBtn()
 })
-Then("Add new company code", () => {
-    admin.AddCompanyCodeBtn()
+Then("Add new company code {string}", (companyCode) => {
+    admin.AddCompanyCodeBtn(companyCode)
 })
-Then("Add new company name", () => {
-    admin.AddComapanyNameBtn()
+Then("Add new company name {string}", (comapanyName) => {
+    admin.AddComapanyNameBtn(comapanyName)
 })
-Then("Add new company short name", () => {
-    admin.AddCompanyShortNameBtn()
+Then("Add new company short name {string}", (comapanyShortName) => {
+    admin.AddCompanyShortNameBtn(comapanyShortName)
 })
 Then("Enter new company basic details", () => {
     admin.EnterNewCompanyBasicDetails()
@@ -43,14 +43,14 @@ Then("Verify home page Header 1 user gb5qc", () => {
 Then("Click the following screen under the master menu", (dataTable) => {
     admin.clickScreens(dataTable)
 })
-Then("Add new country code",()=>{
-    admin.addCountryCodeBtn()
+Then("Add new country code {string}", (Code) => {
+    admin.addCodeBtn(Code)
 })
-Then("Add new country name",()=>{
-    admin.addCountryNameBtn()
+Then("Add new country name {string}", (name) => {
+    admin.addNameBtn(name)
 })
-Then("Enter the ISD code and Gst country code values",()=>{
-    admin.enterISDandGSTCodes()
+Then("Enter the ISD code and Gst country code values", (dataTable) => {
+    admin.enterISDandGSTCodes(dataTable)
 })
 
 

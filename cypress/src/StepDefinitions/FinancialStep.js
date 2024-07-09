@@ -18,7 +18,10 @@ When("Click the following sub-screen under the screen menu", (dataTable) => {
 Then("Click the following Form", (dataTable) => {
     Financial.clickFormHeader(dataTable)
 })
-Then("test",()=>{
+Then("test", () => {
     Financial.enterCostCenterTypeDetails()
-}) 
+})
+Then("test1",()=>{
+    Financial.retrieveNewCostCenterDetails()
+})
 

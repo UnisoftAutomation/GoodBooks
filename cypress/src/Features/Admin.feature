@@ -1,6 +1,6 @@
 Feature: Admin page
 
- @skip
+ 
   Scenario: T14- Verify Company Details Form
     Given Sign in to the goodboods ERP site
     When Verify the Sign in page Header
@@ -21,14 +21,15 @@ Feature: Admin page
       | SubScreen |
       | Company   |
     And Click the add company button
-    And Add new company code
-    And Add new company name
-    And Add new company short name
+    And Add new company code 'v5463'
+    And Add new company name 'v43264'
+    And Add new company short name 'v22'
     And Enter new company basic details
     And Retrieve the company details
     And Delete new company
     Then Remove the new company input field values
- 
+
+
   Scenario: T12- Verify that a user can create a new country entry
     Given Sign in to the goodboods ERP site 1 user gb5qc
     And Enter the valid server name 'GB5QC'
@@ -48,6 +49,8 @@ Feature: Admin page
     And Click the following sub-screen under the screen menu
       | SubScreen |
       | Country   |
-    And Add new country code
-    And Add new country name
+    And Add new country code '53467'
+    And Add new country name 'm3456'
     And Enter the ISD code and Gst country code values
+      | ISDcode | GSTcountry |
+      |     645 |         54 |

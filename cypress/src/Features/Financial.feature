@@ -29,6 +29,7 @@ Feature: Financial
       | screen      |
       | Cost Center |
     And Click the following sub-screen under the screen menu
-      | SubScreen       |
+      | SubScreen        |
       | Cost Center Type |
     And test
+    And test1
