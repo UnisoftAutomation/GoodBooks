@@ -1,53 +1,56 @@
-import { Given,When,Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import sharedFunction from "../../support/SharedFunctions";
 import { Admin } from "../../PageObjects/Admin";
 
-const admin= new Admin
+const admin = new Admin
 
-before(()=>{
+before(() => {
     sharedFunction.loadXpathValue()
     sharedFunction.loadIdValue()
     sharedFunction.loadCssValue()
 })
 
-Given("Click loyout Admin master",()=>{
-admin.ClickAdminMaster()
-}) 
-When("Click menu Master- oraganization",()=>{
-admin.ClickMasterOrganization()
+Then("Click the add company button", () => {
+    admin.AddcompanyBtn()
 })
-Then("Click menu Oraganization- company",()=>{
-    admin.ClickOrganizationCompany()
+Then("Add new company code", () => {
+    admin.AddCompanyCodeBtn()
 })
-Then("Click the add company button",()=>{
-admin.AddcompanyBtn()
-})
-Then("Add new company code",()=>{
-   admin.AddCompanyCodeBtn()
-})
-Then("Add new company name",()=>{
+Then("Add new company name", () => {
     admin.AddComapanyNameBtn()
 })
-Then("Add new company short name",()=>{
+Then("Add new company short name", () => {
     admin.AddCompanyShortNameBtn()
 })
-Then("Enter new company basic details",()=>{
+Then("Enter new company basic details", () => {
     admin.EnterNewCompanyBasicDetails()
-})    
-Then("Retrieve the company details",()=>{
+})
+Then("Retrieve the company details", () => {
     admin.retrieveNewCompanyDetails()
 })
-Then("Delete new company",()=>{
+Then("Delete new company", () => {
     admin.deleteCompany()
 })
-Then("Remove the new company input field values",()=>{
+Then("Remove the new company input field values", () => {
     admin.clearInputValueUsingAddNewBtn()
 })
-Given("Sign in to the goodboods ERP site 1 user gb5qc",()=>{
+Given("Sign in to the goodboods ERP site 1 user gb5qc", () => {
     cy.visit("http://192.168.0.112/4.5/")
 })
-Then("Verify home page Header 1 user gb5qc",()=>{
+Then("Verify home page Header 1 user gb5qc", () => {
     admin.VerifyPageHeader()
+})
+Then("Click the following screen under the master menu", (dataTable) => {
+    admin.clickScreens(dataTable)
+})
+Then("Add new country code",()=>{
+    admin.addCountryCodeBtn()
+})
+Then("Add new country name",()=>{
+    admin.addCountryNameBtn()
+})
+Then("Enter the ISD code and Gst country code values",()=>{
+    admin.enterISDandGSTCodes()
 })
 
 
