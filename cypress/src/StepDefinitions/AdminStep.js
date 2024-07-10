@@ -52,6 +52,35 @@ Then("Add new country name {string}", (name) => {
 Then("Enter the ISD code and Gst country code values", (dataTable) => {
     admin.enterISDandGSTCodes(dataTable)
 })
+Then("Retrieve the new country value", () => {
+    admin.retrieveCountryValue()
+})
+Then("Delete newly created country value", () => {
+    admin.deleteCountry()
+})
+Then("Clear country all input values using Add new button", () => {
+    admin.clearTheCountryInputValueUsingAddNewBtn()
+})
+Then("Add new state code {string}", (code) => {
+    admin.enterStateCode(code)
+})
+Then("Add new state name {string}", (codeName) => {
+    admin.enterStateName(codeName)
+})
+Then("Enter following input values", (dataTable) => {
+    admin.stateInputValue(dataTable)
+})
+Then("Select the country value", () => {
+    admin.enterTheCountryInStateScreen()
+})
+Then("Retrieve the state value", () => {
+    admin.retrieveStateValue()
+})
+Then("Delete the newly created state value", () => {
+    admin.deleteStateValue()
+})
+
+
 
 
 

@@ -18,10 +18,30 @@ When("Click the following sub-screen under the screen menu", (dataTable) => {
 Then("Click the following Form", (dataTable) => {
     Financial.clickFormHeader(dataTable)
 })
-Then("test", () => {
+Then("Eneter basic input values for the cost center type creation", () => {
     Financial.enterCostCenterTypeDetails()
 })
-Then("test1",()=>{
+Then("Retrieve the new cost center type", () => {
     Financial.retrieveNewCostCenterDetails()
 })
-
+Then("Delete newly created cost center type", () => {
+    Financial.deleteCostCenterType()
+})
+Then("Delete all input values using Add new button", () => {
+    Financial.clearCostInputValueUsingAddNewBtn()
+})
+Then("Create cost center type",()=>{
+    Financial.createCostCenterType()
+})
+Then("Enter the cost center code value",()=>{
+ Financial.enterCostCenterCode()
+})
+Then("Enter the cost center name value",()=>{
+    Financial.enterCostCenterName()
+})
+Then("test",()=>{
+    Financial.enterShortName()
+})
+Then("test1",()=>{
+    Financial.grabCostCenterType()
+})

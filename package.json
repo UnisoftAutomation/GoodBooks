@@ -6,7 +6,7 @@
   "scripts": {
     "cy-open": "cypress open",
     "cy-run": "cypress run",
-    "test": "cypress run --browser chrome --spec src/feature/Admin.feature"
+    "test": "cypress run --browser chrome --spec src/features/Admin.feature"
   },
   "author": "",
   "license": "ISC",

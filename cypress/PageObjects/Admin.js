@@ -63,8 +63,8 @@ export class Admin {
             cy.customPath(sharedFunction.getXpathValue('select2viewpoint')).click()
         })
         cy.wait(1000)
-        cy.contains('Delete').click({ force: true })
-        cy.customPath(sharedFunction.getCssValue('infoCompanyDeleteYesBtn')).click()
+        cy.customPath(sharedFunction.getCssValue('deleteBtn')).click({ force: true })
+        cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
         cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
     }
     clearInputValueUsingAddNewBtn() {
@@ -72,8 +72,8 @@ export class Admin {
         cy.get('@NewCode').then((data) => {
             cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data)
             cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
-            cy.customPath(sharedFunction.getXpathValue('companyInputfieldClearBtn')).click({ force: true })
-            cy.customPath(sharedFunction.getCssValue('infoCompanyDeleteYesBtn')).click()
+            cy.customPath(sharedFunction.getXpathValue('InputfieldValueClearBtn')).click({ force: true })
+            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
             cy.contains('Enter Code').should('be.visible')
         })
 
@@ -103,7 +103,66 @@ export class Admin {
             cy.customPath(sharedFunction.getCssValue('isdCode')).should('be.visible').type(value.ISDcode)
             cy.customPath(sharedFunction.getCssValue('gstCountryCode')).should('be.visible').type(value.GSTcountry)
             cy.customPath(sharedFunction.getXpathValue('SaveBtn')).click()
+            cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
         })
-
+    }
+    retrieveCountryValue() {
+        cy.contains('Enter Code').should('be.visible').click()
+        cy.get('@NewCode').then((data) => {
+            cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data).type("{enter}")
+            cy.wait(1000)
+            cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
+            cy.wait(1000)
+            cy.customPath(sharedFunction.getCssValue('UpdateBtn')).click({ force: true })
+            cy.get(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+        })
+    }
+    deleteCountry() {
+        cy.contains('Enter Code').should('be.visible').click()
+        cy.get('@NewCode').then((data) => {
+            cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data).type("{enter}")
+            cy.wait(1000)
+            cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
+            cy.wait(1000)
+            cy.customPath(sharedFunction.getCssValue('deleteBtn')).click({ force: true })
+            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
+            cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+        })
+    }
+    clearTheCountryInputValueUsingAddNewBtn() {
+        cy.contains('Enter Code').should('be.visible').click()
+        cy.get('@NewCode').then((data) => {
+            cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data)
+            cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
+            cy.customPath(sharedFunction.getXpathValue('InputfieldValueClearBtn')).click({ force: true })
+            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
+            cy.contains('Enter Code').should('be.visible')
+        })
+    }
+    enterStateCode(code) {
+        this.addCodeBtn(code)
+    }
+    enterStateName(codeName) {
+        this.addNameBtn(codeName)
+    }
+    stateInputValue(dataTable) {
+        dataTable.hashes().forEach(value => {
+            cy.get('#mat-input-3').type(value.GSTStateCode)
+            cy.get('#mat-input-4').type(value.TIN)
+        })
+    }
+    enterTheCountryInStateScreen() {
+        cy.contains('Select Country').click()
+        cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type('AFG')
+        cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
+        cy.customPath(sharedFunction.getXpathValue('SaveBtn')).click()
+        cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+    }
+    retrieveStateValue() {
+        this.retrieveCountryValue()
+    }
+    deleteStateValue() {
+        this.deleteCountry()
+        this.clearTheCountryInputValueUsingAddNewBtn()
     }
 } 

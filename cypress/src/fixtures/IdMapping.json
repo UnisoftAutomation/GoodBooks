@@ -1,4 +1,3 @@
 {
-
-"FilterClearBtn":"//*[@id='FilterPicklist']/div[1]/div[2]/button"
+    "FilterClearBtn": "//*[@id='FilterPicklist']/div[1]/div[2]/button"
 }
