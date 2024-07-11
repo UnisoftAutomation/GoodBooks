@@ -30,3 +30,11 @@ Cypress.Commands.add('customPath',(selector)=>{
         cy.get(selector)
     }
 })
+
+// Cypress.Commands.add('login', (servername,username, password) => {
+//     cy.visit('/')
+//     cy.xpath("//input[@id='mat-input-0']").clear().should('be.visible').type(servername)
+//     cy.xpath("//input[@id='mat-input-1']").clear().should('be.visible').type(username)
+//     cy.xpath("//input[@id='mat-input-2']").clear().should('be.visible').type(password)
+//     cy.xpath("//b[@class='title2-med-22-white']").should('be.visible').click() 
+// })

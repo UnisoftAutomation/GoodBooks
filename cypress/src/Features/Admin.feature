@@ -29,7 +29,7 @@ Feature: Admin page
     And Delete new company
     Then Remove the new company input field values
 
-  @skip
+ @skip
   Scenario: T12- Verify that a user can create a new country entry
     Given Sign in to the goodboods ERP site 1 user gb5qc
     And Enter the valid server name 'GB5QC'
@@ -57,6 +57,7 @@ Feature: Admin page
     And Retrieve the new country value
     And Delete newly created country value
     And Clear country all input values using Add new button
+
 
   Scenario: T32- Verify that User Can Create New state and Related to the Field
     Given Sign in to the goodboods ERP site 1 user gb5qc

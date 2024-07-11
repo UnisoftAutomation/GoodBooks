@@ -33,15 +33,24 @@ Then("Delete all input values using Add new button", () => {
 Then("Create cost center type",()=>{
     Financial.createCostCenterType()
 })
-Then("Enter the cost center code value",()=>{
+Then("Enter the cost Category code value",()=>{
  Financial.enterCostCenterCode()
 })
-Then("Enter the cost center name value",()=>{
+Then("Enter the cost Category name value",()=>{
     Financial.enterCostCenterName()
 })
-Then("test",()=>{
+Then("Enter the Category short name",()=>{
     Financial.enterShortName()
 })
-Then("test1",()=>{
-    Financial.grabCostCenterType()
+Then("grab and resue the cost center type",()=>{
+    Financial.grabCostCenterTypeInput()
+})
+Then("Retrieve the new cost Category",()=>{
+    Financial.retrieveCostCenter()
+}) 
+Then("Delete newly created cost Category",()=>{
+    Financial.deleteCostCenter()
+})
+Then("After cost category created Delete cost center type",()=>{
+    Financial.afterDeleteCostCenterType()
 })

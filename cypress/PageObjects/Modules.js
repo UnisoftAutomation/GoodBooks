@@ -1,5 +1,7 @@
 import sharedFunction from "../support/SharedFunctions";
 
+export const dataMap =new Map()
+
 export class modules {
 
   verifyModules(dataTable) {
@@ -26,5 +28,4 @@ export class modules {
       });
     });
   }
-
 }

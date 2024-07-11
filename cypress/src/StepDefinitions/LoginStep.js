@@ -4,6 +4,9 @@ import sharedFunction from "../../support/SharedFunctions";
 
 const Login = new login
 
+beforeEach(()=>{
+    Login.visitLoginPage() 
+})
 before(() => {
     sharedFunction.loadXpathValue()
     sharedFunction.loadIdValue()

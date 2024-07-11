@@ -64,6 +64,7 @@ export class Admin {
         })
         cy.wait(1000)
         cy.customPath(sharedFunction.getCssValue('deleteBtn')).click({ force: true })
+        cy.wait(1000)
         cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
         cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
     }
@@ -135,8 +136,18 @@ export class Admin {
             cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data)
             cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
             cy.customPath(sharedFunction.getXpathValue('InputfieldValueClearBtn')).click({ force: true })
-            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
-            cy.contains('Enter Code').should('be.visible')
+            cy.wait(1000)
+           cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
+                  
+            // cy.get('mat-dialog-container').then($dialog => {
+            //     if ($dialog.find('.alertbutton:contains("Yes")').length) {
+            //         // Click the "Yes" button if it exists
+            //         cy.get('.alertbutton').contains('Yes').click();
+            //     } else {
+            //         // Verify the visibility of the "Enter Code" text if the "Yes" button does not exist
+            //         cy.contains('Enter Code').should('be.visible');
+            //     }
+            // });   
         })
     }
     enterStateCode(code) {

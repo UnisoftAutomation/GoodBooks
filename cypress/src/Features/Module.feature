@@ -1,7 +1,7 @@
 Feature: Modules
 
  Scenario: Verify all Modules
-    Given Sign in to the goodboods ERP site
+  #  Given Sign in to the goodboods ERP site
     When Verify the Sign in page Header
     And Enter the valid server name 'USCQC'
     And Enter the valid user name 'ADMIN'
@@ -37,3 +37,4 @@ Feature: Modules
       |    51 | Projects    |
     And I grab all values from the elements
     And I should log all the values
+    And test dataMap
