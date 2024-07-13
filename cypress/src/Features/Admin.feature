@@ -29,7 +29,7 @@ Feature: Admin page
     And Delete new company
     Then Remove the new company input field values
 
- @skip
+  @skip
   Scenario: T12- Verify that a user can create a new country entry
     Given Sign in to the goodboods ERP site 1 user gb5qc
     And Enter the valid server name 'GB5QC'
@@ -78,8 +78,8 @@ Feature: Admin page
     And Click the following sub-screen under the screen menu
       | SubScreen |
       | State     |
-    And Add new state code '346'
-    And Add new state name '456'
+    And Add new state code '28756'
+    And Add new state name '434656'
     And Enter following input values
       | GSTStateCode | TIN  |
       |         1237 | 4563 |

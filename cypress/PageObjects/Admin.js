@@ -1,6 +1,7 @@
 import sharedFunction from "../support/SharedFunctions";
+import financial from "./Financial"
 
-export class Admin {
+export class Admin extends financial {
 
     AddcompanyBtn() {
         cy.customPath(sharedFunction.getCssValue('newCompayAddBtn')).should('be.visible').click()
@@ -114,8 +115,7 @@ export class Admin {
             cy.wait(1000)
             cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
             cy.wait(1000)
-            cy.customPath(sharedFunction.getCssValue('UpdateBtn')).click({ force: true })
-            cy.get(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+            this.updateForm()
         })
     }
     deleteCountry() {
@@ -125,9 +125,7 @@ export class Admin {
             cy.wait(1000)
             cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
             cy.wait(1000)
-            cy.customPath(sharedFunction.getCssValue('deleteBtn')).click({ force: true })
-            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
-            cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+            this.deleteForm()
         })
     }
     clearTheCountryInputValueUsingAddNewBtn() {
@@ -135,10 +133,11 @@ export class Admin {
         cy.get('@NewCode').then((data) => {
             cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type(data)
             cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
+            cy.wait(1000)
             cy.customPath(sharedFunction.getXpathValue('InputfieldValueClearBtn')).click({ force: true })
             cy.wait(1000)
-           cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
-                  
+            cy.customPath(sharedFunction.getCssValue('infoDeleteYesBtn')).click()
+
             // cy.get('mat-dialog-container').then($dialog => {
             //     if ($dialog.find('.alertbutton:contains("Yes")').length) {
             //         // Click the "Yes" button if it exists
@@ -166,8 +165,7 @@ export class Admin {
         cy.contains('Select Country').click()
         cy.customPath(sharedFunction.getXpathValue('myInputField')).should('be.visible').clear().type('AFG')
         cy.customPath(sharedFunction.getCssValue('firstFilterValue')).click()
-        cy.customPath(sharedFunction.getXpathValue('SaveBtn')).click()
-        cy.customPath(sharedFunction.getCssValue('createPopupCloseBtn')).click()
+        this.saveForm()
     }
     retrieveStateValue() {
         this.retrieveCountryValue()
@@ -176,4 +174,7 @@ export class Admin {
         this.deleteCountry()
         this.clearTheCountryInputValueUsingAddNewBtn()
     }
-} 
+}
+
+
+export default Admin;
